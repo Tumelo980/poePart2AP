@@ -1,0 +1,53 @@
+﻿@page
+@model APPrST10106976.P1.Areas.Identity.Pages.Account.Good_DonationsModel
+@{
+}
+<center>
+    <h2>Donate your goods here</h2>
+</center>
+@using (Html.BeginForm())
+{ }
+
+@Html.ValidationSummary(true)
+<div class="form-group">
+    @Html.LabelFor(model => model.DonationDate)
+    @Html.TextBoxFor(model => model.DonationDate, new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.DonationDate)
+
+</div>
+
+<br />
+
+<div class="form-group">
+    <label class="from-lable">Number of Items</label>
+    @Html.TextBoxFor(model => model.Num_Item, new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.Num_Item)
+</div>
+
+<br />
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.Description)
+</div>
+
+<br />
+
+<label class ="from-lable">Category</label>
+@Html.DropDownList("Category",
+Html.GetEnumSelectList<Eroles>(),
+"Select category", new {@class = "form-control"})
+
+<br />
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Anonymous)
+    @Html.CheckBoxFor(model => model.Anonymous)
+</div>
+<a class="nav-link" href="/Identity/Account/ToDo">
+    Donate
+</a>.
+
+
+    <h3> thank you for you support god bless you </h3>
